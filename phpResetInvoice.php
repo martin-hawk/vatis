@@ -1,0 +1,63 @@
+<?php
+require_once ('db.php');
+require_once ('functions.php');
+session_start();
+
+page_protect($conn, '1', $_SESSION['user_company']);
+
+	unset($_SESSION['count']);
+	unset($_SESSION['info']);
+	unset($_SESSION['invoiceNo']);
+	unset($_SESSION['language']);
+	unset($_SESSION['date']);
+	unset($_SESSION['due_date']);
+    unset($_SESSION['bankID']);
+    unset($_SESSION['bankName']);
+    unset($_SESSION['bankSWIFT']);
+    unset($_SESSION['bankIBAN']);
+	unset($_SESSION['customer_id']);
+	unset($_SESSION['customer_name']);
+	unset($_SESSION['customer_code']);
+	unset($_SESSION['customer_vat']);
+	unset($_SESSION['customer_country']);
+	unset($_SESSION['customer_district']);
+	unset($_SESSION['customer_city']);
+	unset($_SESSION['customer_street']);
+	unset($_SESSION['customer_house']);
+	unset($_SESSION['customer_flat']);
+	unset($_SESSION['customer_postalCode']);
+	unset($_SESSION['customer_address1']);
+	unset($_SESSION['customer_address2']);
+	unset($_SESSION['customer_address3']);
+	unset($_SESSION['customer_address4']);
+	unset($_SESSION['productCode']);
+	unset($_SESSION['productDescription']);
+	unset($_SESSION['productForeignDescription']);
+	unset($_SESSION['quantity']);
+	unset($_SESSION['uom']);
+	unset($_SESSION['uomForeignDescription']);
+	unset($_SESSION['uomDescription']);
+	unset($_SESSION['documentPrice']);
+	unset($_SESSION['localPrice']);
+	unset($_SESSION['vatRate']);
+	unset($_SESSION['vatReason']);
+	unset($_SESSION['vatForeignReason']);
+	unset($_SESSION['documentNet']);
+	unset($_SESSION['documentVAT']);
+	unset($_SESSION['documentGross']);
+	unset($_SESSION['localNet']);
+	unset($_SESSION['localVAT']);
+	unset($_SESSION['localGross']);
+	unset($_SESSION['currency']);
+	unset($_SESSION['vatPercentage']);
+	unset($_SESSION['documentNetTotal']);
+	unset($_SESSION['documentVATTotal']);
+	unset($_SESSION['documentGrossTotal']);
+	unset($_SESSION['localNetTotal']);
+	unset($_SESSION['localVATTotal']);
+	unset($_SESSION['localGrossTotal']);
+	//unset($_SESSION['exchangeRate']); palikta, kad veiktų konversijos skaičiuoklė
+	$_POST = array();
+header("Location: newInvoice.php");
+exit;
+?>
