@@ -224,7 +224,7 @@ while ($rate = $vatrates->fetch_array()) {
       <td>Mokėjimo būdas</td>
       <td><select name="newBankID" id="newBankID">
       <?php
-$banks = $conn->query("SELECT * FROM classifier_company_bank");
+$banks = $conn->query('SELECT * FROM classifier_company_bank WHERE CompanyCode = "' . $_SESSION['user_company'] . '"');
 unset($which);
 
 if (isset($_SESSION['bankID']))
